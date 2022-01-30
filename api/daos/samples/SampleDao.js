@@ -6,7 +6,7 @@ class SampleDao extends BaseDao {
   }
 
   getSample() {
-    return 'this is a sample';
+    return 'You said... => ';
   }
 }
 
