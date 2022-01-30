@@ -29,22 +29,22 @@ export class ApiClient {
     }
   }
 
-  get(params) {
+  get({ params }) {
     const request = this.httpRequest.get({ url: this.url, params });
     return this._sendRequestAndGetResponse(request);
   }
 
-  post(params, data) {
+  post({ params, data }) {
     const request = this.httpRequest.post({ url: this.url, data, params });
     return this._sendRequestAndGetResponse(request);
   }
 
-  put(params, data) {
+  put({ params, data }) {
     const request = this.httpRequest.put({ url: this.url, data, params });
     return this._sendRequestAndGetResponse(request);
   }
 
-  delete(params) {
+  delete({ params }) {
     const request = this.httpRequest.delete({ url: this.url, params });
     return this._sendRequestAndGetResponse(request);
   }
