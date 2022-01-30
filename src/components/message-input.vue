@@ -2,16 +2,28 @@
   <div>
     <form>
       <input type="text" v-model="message" />
-      <button>SEND MESSAGE</button>
+      <button type="button" @click.prevent="onSendMessage">SEND MESSAGE</button>
     </form>
   </div>
 </template>
 
 <script>
+import api from '../plugins/api';
+
 export default {
   name: 'message-input',
   props: ['value'],
+  data() {
+    return {
+      apiResponse: '',
+    };
+  },
   computed: {
+    params() {
+      return {
+        message: this.message,
+      };
+    },
     message: {
       get() {
         return this.value;
@@ -19,6 +31,17 @@ export default {
       set(value) {
         this.$emit('input', value);
       },
+    },
+  },
+  methods: {
+    async onSendMessage() {
+      try {
+        const apiResponse = await api.sample.get(this.params);
+        console.log(apiResponse);
+        this.apiResponse = apiResponse;
+      } catch (err) {
+        console.error(err);
+      }
     },
   },
 };
