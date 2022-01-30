@@ -1,10 +1,10 @@
 {
-  "name": "web",
+  "name": "express-vue-boilerplate",
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "start": "npm run serve",
-    "serve": "vue-cli-service serve",
+    "serve:web": "vue-cli-service serve",
+    "serve:api": "cd api && npm start",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
     "clean": "rimraf ./dist ./node_modules",
