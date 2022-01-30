@@ -4,21 +4,23 @@ class HttpResponse {
   constructor() {}
 
   ok({ res, data }) {
-    res.status(HttpStatus.OK).json({ data });
+    return res.status(HttpStatus.OK).json({ data });
   }
 
   created({ res, data }) {
-    res.status(HttpStatus.CREATED).json({ data });
+    return res.status(HttpStatus.CREATED).json({ data });
   }
 
   noContent({ res }) {
-    res.status(HttpStatus.NO_CONTENT);
+    return res.status(HttpStatus.NO_CONTENT);
   }
 
   error({ res, error }) {
-    const errorCode = res.status || HttpStatus.INTERNAL_SERVER_ERROR;
-
-    res.status(errorCode).json({ error });
+    const errorCode = error.code || HttpStatus.INTERNAL_SERVER_ERROR;
+    const errorMessage = error.message || 'UNKNOWN ERROR';
+    return res
+      .status(errorCode)
+      .json({ code: errorCode, message: errorMessage });
   }
 }
 
