@@ -1,5 +1,3 @@
-require('dotenv').config();
-
 const {
   API_PORT_LOCAL,
   API_BASE_URL_LOCAL,

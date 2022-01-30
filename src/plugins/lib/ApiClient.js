@@ -1,14 +1,14 @@
-const config = require('../../../config');
-const { httpRequest } = require('../../../utils');
+// const config = require('../../../config');
+// const { httpRequest } = require('../../../utils');
+import config from '../config';
+import { httpRequest } from '../../../utils';
 
 // XXX: extends HttpClient instead of injecting it as a property?
-class ApiClient {
-  config = {};
-  url = '';
+export class ApiClient {
   httpRequest = httpRequest;
 
   constructor({ url, ...arg }) {
-    this.httpRequest.baseUrl = config.api.baseUrl ?? config.apiUrl;
+    this.httpRequest.baseUrl = config.api?.baseUrl ?? config.apiUrl;
     this.url = url;
     Object.assign(this, arg);
   }
@@ -49,5 +49,3 @@ class ApiClient {
     return this._sendRequestAndGetResponse(request);
   }
 }
-
-module.exports = { ApiClient };
