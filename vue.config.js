@@ -2,7 +2,7 @@ const config = require('./config');
 
 process.env.VUE_APP_CONFIG = JSON.stringify({
   baseUrl: config.web.baseUrl,
-  apiUrl: config.api.baseUrl,
+  apiUrl: config.api.baseUrl + '/api',
 });
 
 module.exports = {
