@@ -1,14 +1,21 @@
 class SampleService {
-  constructor(sampleDao) {
+  constructor({ sampleDao }) {
     this.sampleDao = sampleDao;
   }
 
   getSampleWithMessage(message) {
     try {
+      if (!message) {
+        // TODO: make utility of exceptions
+        const badRequestException = new Error('message is required');
+        badRequestException.code = 400;
+        throw badRequestException;
+      }
       return this.sampleDao.getSample() + message;
-    } catch (err) {
-      // TODO: handle error and use logger
-      console.error(err);
+    } catch (error) {
+      // TODO: use logger
+      console.error(error);
+      throw error;
     }
   }
 }

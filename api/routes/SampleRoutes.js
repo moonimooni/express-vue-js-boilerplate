@@ -1,13 +1,15 @@
-const { sampleController } = require('../controllers');
-
 class SampleRoutes {
-  constructor(router) {
+  constructor({ router, sampleController }) {
+    this.sampleController = sampleController;
     this.router = router;
     this.registerRoutes();
   }
 
   registerRoutes() {
-    this.router.get('/sample', sampleController.getSample);
+    this.router.get(
+      '/sample',
+      this.sampleController.getSample.bind(this.sampleController)
+    );
   }
 }
 
