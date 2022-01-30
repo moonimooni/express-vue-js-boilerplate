@@ -7,7 +7,7 @@ class SampleController {
 
   getSample(req, res) {
     try {
-      const { message } = req.params;
+      const { message } = req.query;
       const sample = this.sampleService.getSampleWithMessage(message);
       return httpResponse.ok({ res, data: { sample } });
     } catch (error) {
