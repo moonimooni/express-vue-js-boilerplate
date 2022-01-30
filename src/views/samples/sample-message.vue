@@ -36,7 +36,7 @@ export default {
   methods: {
     async onClick() {
       try {
-        const apiResponse = await api.sample.get(params);
+        const apiResponse = await api.sample.get(this.params);
         console.log(apiResponse);
         this.apiResponse = apiResponse;
       } catch (err) {
