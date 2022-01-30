@@ -1,20 +1,18 @@
 <template>
   <div>
     <h1>Sample Page</h1>
-    <message-input v-model="message" />
-    <div>
-      <h3>👇🏻 API Response</h3>
-    </div>
+    <h3>👇🏻 check API Response</h3>
+    <message-interface v-model="message" />
   </div>
 </template>
 
 <script>
-import MessageInput from '../../components/message-input';
+import MessageInterface from '../../components/message-interface';
 
 export default {
   name: 'sample-message',
   components: {
-    MessageInput,
+    MessageInterface,
   },
   data() {
     return {

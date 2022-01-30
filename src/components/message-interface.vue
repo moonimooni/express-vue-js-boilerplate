@@ -2,8 +2,11 @@
   <div>
     <form>
       <input type="text" v-model="message" />
-      <button type="button" @click.prevent="onSendMessage">SEND MESSAGE</button>
+      <button type="submit" @click.prevent="onSendMessage">SEND MESSAGE</button>
     </form>
+    <h2>
+      {{ returnMessage }}
+    </h2>
   </div>
 </template>
 
@@ -11,11 +14,11 @@
 import api from '../plugins/api';
 
 export default {
-  name: 'message-input',
+  name: 'message-interface',
   props: ['value'],
   data() {
     return {
-      apiResponse: '',
+      returnMessage: '',
     };
   },
   computed: {
@@ -36,11 +39,12 @@ export default {
   methods: {
     async onSendMessage() {
       try {
-        const apiResponse = await api.sample.get(this.params);
-        console.log(apiResponse);
-        this.apiResponse = apiResponse;
-      } catch (err) {
-        console.error(err);
+        const apiResponse = await api.sample.get({ params: this.params });
+        const { sample } = apiResponse?.data;
+        this.returnMessage = sample;
+        this.message = '';
+      } catch (error) {
+        console.error(error);
       }
     },
   },
