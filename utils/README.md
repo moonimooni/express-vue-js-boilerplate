@@ -1,6 +1,8 @@
-# Common Utilies for both Backend and Frontend
+# Common Utilities for both Backend and Frontend
 
-### HttpClient
+### HttpRequest
+
+### HttpResposne
 
 ### HttpStatus
 
