@@ -7,7 +7,7 @@ class SampleDao extends BaseDao {
   }
 
   getSample() {
-    return 'You said... => ';
+    return '🎉 SAMPLE TEXT 🎉';
   }
 }
 

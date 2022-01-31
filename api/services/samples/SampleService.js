@@ -11,7 +11,7 @@ class SampleService {
         badRequestException.code = 400;
         throw badRequestException;
       }
-      return this.sampleDao.getSample() + message;
+      return this.sampleDao.getSample() + ' ' + message;
     } catch (error) {
       // TODO: use logger
       console.error(error);
