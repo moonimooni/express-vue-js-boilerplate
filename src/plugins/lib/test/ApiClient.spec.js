@@ -30,8 +30,8 @@ describe('ApiClient', () => {
       return Promise.resolve({ data: { url, params } });
     });
 
-    const r1 = await testClient.get(testParams);
-    const r2 = await testClient.foo.get(testParams);
+    const r1 = await testClient.get({ params: testParams });
+    const r2 = await testClient.foo.get({ params: testParams });
 
     expect(r1).toEqual({ url: '/foo/:id', params: testParams });
     expect(r2).toEqual({ url: '/foo/bar', params: testParams });
