@@ -15,5 +15,8 @@
     "cors": "^2.8.5",
     "express": "^4.17.2",
     "knex": "^1.0.1"
+  },
+  "devDependencies": {
+    "supertest": "^6.2.2"
   }
 }
