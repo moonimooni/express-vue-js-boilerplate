@@ -1,5 +1,5 @@
 const { constants } = require('http2');
-const HttpStatus = require('./HttpStatus');
+const HttpStatus = require('../http/HttpStatus');
 
 describe('HttpStatus', () => {
   test('http status code', () => {

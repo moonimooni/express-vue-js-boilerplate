@@ -1,5 +1,5 @@
 const { BaseDao } = require('../../../utils');
-const { SampleDao } = require('../../samples');
+const { SampleDao } = require('../../../models/samples');
 
 describe('SampleDao', () => {
   const sampleDao = new SampleDao();

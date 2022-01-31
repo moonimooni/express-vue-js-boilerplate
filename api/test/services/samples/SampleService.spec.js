@@ -1,5 +1,5 @@
 const { sampleDao } = require('../../../models');
-const { sampleService } = require('../../samples');
+const { sampleService } = require('../../../services/samples');
 
 jest.mock('../../../models');
 

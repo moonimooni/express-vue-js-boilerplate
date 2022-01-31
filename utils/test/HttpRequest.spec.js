@@ -1,5 +1,5 @@
 const axios = require('axios');
-const { HttpRequest } = require('./HttpRequest');
+const { HttpRequest } = require('../http/HttpRequest');
 
 jest.mock('axios');
 

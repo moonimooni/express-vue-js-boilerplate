@@ -1,6 +1,6 @@
 const express = require('express');
 const supertest = require('supertest');
-const { SampleController } = require('../SampleController');
+const { SampleController } = require('../../controllers/SampleController');
 
 describe('SampleController', () => {
   const createTestApp = ({ sampleService }) => {
@@ -13,7 +13,7 @@ describe('SampleController', () => {
   };
 
   describe('getSample', () => {
-    it('should return OK', async () => {
+    it('should return ok', async () => {
       const sampleService = {
         getSampleWithMessage: jest.fn().mockReturnValueOnce('FOO'),
       };
