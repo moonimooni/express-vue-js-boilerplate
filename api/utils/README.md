@@ -3,3 +3,5 @@
 ### BaseDao
 
 ### BaseException
+
+### BaseLogger
