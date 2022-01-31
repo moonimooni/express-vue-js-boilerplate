@@ -5,6 +5,7 @@ jest.mock('../../../models');
 
 describe('sampleService', () => {
   sampleDao.getSample.mockReturnValueOnce('FOO');
+
   describe('getSampleWithMessage', () => {
     it('should return text with FOO', () => {
       expect(sampleService.getSampleWithMessage('BAR')).toBe('FOO BAR');

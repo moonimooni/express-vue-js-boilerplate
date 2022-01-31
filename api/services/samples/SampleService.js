@@ -14,7 +14,6 @@ class SampleService {
       return this.sampleDao.getSample() + ' ' + message;
     } catch (error) {
       // TODO: use logger
-      console.error(error);
       throw error;
     }
   }
