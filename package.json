@@ -2,6 +2,9 @@
   "name": "express-vue-boilerplate",
   "version": "0.0.1",
   "private": true,
+  "workspaces": [
+    "api"
+  ],
   "scripts": {
     "serve:web": "vue-cli-service serve",
     "serve:api": "cd api && npm start",
