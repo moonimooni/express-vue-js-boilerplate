@@ -1,11 +1,11 @@
-const { ApiClient } = require('../ApiClient');
-const { httpRequest } = require('../../../../utils');
+const { ApiClient } = require('../../src/plugins/lib/ApiClient');
+const { httpRequest } = require('../../utils');
 
 // import ApiClient from '../ApiClient';
 // import { httpRequest } from '../../../../utils';
 
 jest.mock('axios');
-jest.mock('../../config', () => ({
+jest.mock('../../src/plugins/config', () => ({
   api: {
     baseUrl: 'http://foo:3000',
     port: 3000,
